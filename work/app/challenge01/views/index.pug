@@ -1,5 +1,14 @@
 extends layout
 
 block content
+  p made with #{title}
   h1= title
-  p Welcome to #{title}
+  h2= "サーバを停止すると書き込み内容も削除されます。"
+  form(method='post', action='/')
+    label
+      input(type="textbox", name="txt")
+      input(type="submit", value="書き込む")
+    each v in data
+      p #{v}
+    else
+      p There is no comment
