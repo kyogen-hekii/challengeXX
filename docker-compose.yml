@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+    webserver:
+      build: .
+      image: challenge-dev:01
+      init: true
+      container_name: cnode
+      tty: true
+      volumes:
+        - ./work/app:/app
+      ports:
+        - "3000:3000"
+        - "1234:1234"
+        - "9229:9229"
