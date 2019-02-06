@@ -1,5 +1,10 @@
 extends layout
 
 block content
-  h1= title
+  h1= "``を穴埋め形式に置換 for Anki"
+  h2= "ファイルパスを入力してください(サーバーのパス)"
+  form(method='post', action='/')
+    labal
+      input(type='textbox', name='txt')
+      input(type='submit', value='変換')
   p Welcome to #{title}

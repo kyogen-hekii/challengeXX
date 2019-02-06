@@ -1,0 +1,2 @@
+<span class=""cloze"" onclick=""cloze(this.id);"">aaa</span>
+vvv
