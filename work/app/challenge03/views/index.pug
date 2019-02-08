@@ -3,3 +3,18 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  
+  form(method='post', action='/')
+    p
+      input(type='radio', name='options', value='co', checked=radio_op=='co' ? true : false)
+      | coding
+      input(type='radio', name='options', value='ca', checked=radio_op=='ca' ? true : false)
+      | making card
+    p
+      input(type='textbox', name='txt_start', readonly='readonly', value=start_time)
+      input(type='textbox', name='txt_stop', readonly='readonly', value=stop_time)
+    p
+      button(type='submit', formaction='/start') start
+      button(type='submit', formaction='/stop') stop
+      button(type='submit', formaction='/save') save
+      button(type='submit', formaction='/reset') reset
