@@ -4,11 +4,18 @@ services:
       build: .
       image: challenge-dev:01
       init: true
-      container_name: cnode
       tty: true
+      container_name: cnode
+      working_dir: /ubuntu16/develop/50challenge/work/app
+      environment:
+        - NODE_ENV=development
       volumes:
-        - ./work/app:/app
+        - ./work/app:/ubuntu16/develop/50challenge/work/app
+        #- ./work/app:/app
       ports:
         - "3000:3000"
         - "1234:1234"
         - "9229:9229"
+      expose:
+        - "3000"
+        - "9229"
